@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by Sophia Muraro on 10/03/25.
+  
+*/
+
+/* MARK: - LOGIN VIEW */
+"login.welcome.title" = "Log in to access your medical prescriptions";
+"login.email.placeholder" = "email@example.com";
+"login.password.placeholder" = "Password";
+"login.button.title" = "Login";
+
+/* MARK: - HOME SCREEN */
+
+/* MARK: - RECEIPTS SCREEN */
+
+/* MARK: - NEWRECEIPT SCREEN */
