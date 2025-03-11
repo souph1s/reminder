@@ -13,6 +13,7 @@ class LoginBottonSheetView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "login.label.title".localized
+        label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -54,10 +55,18 @@ class LoginBottonSheetView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         setupUI()
+        
+        let exampleGest = UITapGestureRecognizer(target: self, action: #selector(exampleTaped))
+        titleLabel.addGestureRecognizer(exampleGest)
     }
     
     required init ?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc
+    private func exampleTaped(){
+        print("clicou no botão")
     }
     
     private func setupUI(){
