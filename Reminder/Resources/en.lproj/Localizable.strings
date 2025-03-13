@@ -12,6 +12,9 @@
 "login.password.placeholder" = "Password";
 "login.button.title" = "Login";
 
+"login.loginText.label.title" = "E-mail";
+"login.passwordText.label.title" = "Password";
+
 /* MARK: - HOME SCREEN */
 
 /* MARK: - RECEIPTS SCREEN */
