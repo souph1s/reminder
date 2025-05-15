@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class LoginBottonSheetView: UIView {
+    public weak var delegate: LoginBottonSheetViewDelegate?
+    
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -65,6 +67,7 @@ class LoginBottonSheetView: UIView {
         button.setTitle("login.button.title".localized, for: .normal)
         button.backgroundColor = Colors.primaryRedBase
         button.layer.cornerRadius = Metrics.medium
+        button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
         button.titleLabel?.font = Typography.subHeading
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -131,6 +134,13 @@ class LoginBottonSheetView: UIView {
             loginButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize)
         ])
         
+    }
+    
+    @objc
+    private func loginButtonDidTapped () {
+        let password = passwordTextField.text ?? ""
+        let user = emailTextField.text ?? ""
+        delegate?.sendLoginData(user: user, password: password)
     }
    
 }
